@@ -38,10 +38,11 @@ exports.update = async (req, res) => {
 // GET One
 exports.readOne = async (req, res) => {
   id = req.params.id;
-  switchStatusResponse(await handleReadOneUser(req.body, id), res);
+  switchStatusResponse(await handleReadOneUser(id), res);
 };
 
 // DELETE ONE
 exports.remove = async (req, res) => {
-  switchStatusResponse(await handleDeleteOneUser(req.params.id), res);
+  id = req.params.id;
+  switchStatusResponse(await handleDeleteOneUser(id), res);
 };

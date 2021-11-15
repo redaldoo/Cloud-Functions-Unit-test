@@ -46,6 +46,10 @@ exports.validateUserData = (data) => {
 
 exports.reduceUserData = (data) => {
   let userDetails = {};
+  let errors = {};
+
+  if (isEmpty(data.name)) errors.name = "Must not be empty";
+  if (isEmpty(data.lastname)) errors.lastname = "Must not be empty";
 
   userDetails.email = data.email.toLowerCase();
   if (Object.keys(data).includes("password")) {
@@ -69,5 +73,5 @@ exports.reduceUserData = (data) => {
     }
   }
 
-  return userDetails;
+  return errors, userDetails;
 };

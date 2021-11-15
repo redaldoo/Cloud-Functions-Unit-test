@@ -6,7 +6,7 @@ const { deletePic } = require("../../common/autoUpdate");
 const { switchStatus } = require("../../middleware/statusRes");
 const { db } = require("../../../utils/admin");
 
-const { handleReadOneCompte } = require("../../ec/comptes/handlers/comptes");
+
 const PathStorage = "users";
 const { updateUploadFiles } = require("../../common/upload");
 

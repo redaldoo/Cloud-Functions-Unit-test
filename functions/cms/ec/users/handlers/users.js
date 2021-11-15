@@ -32,18 +32,18 @@ exports.handleReadOneUser = async (id) => {
 //UPDATE ONE
 exports.handleUpdateUser = async (content, id) => {
   let dataReduced = reduceUserData(content.data);
-  if (content.files.length > 0) {
-    const uploadedFiles = switchStatus(await updateUploadFiles(Users.doc(id), content.files[0], PathStorage));
-    if (uploadedFiles.status === 202) {
-      dataReduced.imgUrl = uploadedFiles.message;
-      dataReduced.imgPath = uploadedFiles.imgPath;
-    }
-  }
+  // if (content.files.length > 0) {
+  //   const uploadedFiles = switchStatus(await updateUploadFiles(Users.doc(id), content.files[0], PathStorage));
+  //   if (uploadedFiles.status === 202) {
+  //     dataReduced.imgUrl = uploadedFiles.message;
+  //     dataReduced.imgPath = uploadedFiles.imgPath;
+  //   }
+  // }
   return await update(Users.doc(id), dataReduced);
 };
 //DELETE ONE
 exports.handleDeleteOneUser = async (id) => {
-  await deletePic(Users.doc(id));
-  await deleteUserId(id);
+  // await deletePic(Users.doc(id));
+  // await deleteUserId(id);
   return switchStatus(await deleteOne(Users.doc(id)));
 };

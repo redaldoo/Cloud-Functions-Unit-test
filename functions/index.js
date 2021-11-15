@@ -11,6 +11,10 @@ const { filesUpload } = require("./cms/middleware/filesUpload");
 
 app.use("/auth", require("./cms/auth/routes/auth"));
 app.use("/users", require("./cms/ec/users/routes/users"));
+app.use("/products", require("./products/routes/products"));
+app.use("/category", require("./category/routes/category"));
+app.use("/orders", require("./order/routes/orders"));
+
 
 V1.use("/v1", filesUpload, app);
 
