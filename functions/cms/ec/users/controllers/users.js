@@ -10,6 +10,7 @@ const { switchStatusResponse } = require("../../../middleware/statusRes");
 
 // CREATE NEW
 exports.create = async (req, res) => {
+  console.log(req.body)
   const response = await handleCreateUser(req.body);
   if (response.status === 201) {
     return res

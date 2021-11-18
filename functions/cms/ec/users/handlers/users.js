@@ -15,6 +15,8 @@ exports.handleCreateUser = async (content) => {
   const { valid, errors } = validateUserData(content);
   if (!valid) return switchStatus({ status: 400, message: errors });
   let dataReduced = await reduceUserData(content);
+  console.log("dataReduced")
+  console.log(dataReduced)
   // Verify User email
   const verificationEmail = await emailVerification(dataReduced.email);
   if (!verificationEmail) return switchStatus({ status: 400, message: "Cet email existe déja" });

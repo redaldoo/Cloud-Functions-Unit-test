@@ -73,5 +73,12 @@ exports.reduceUserData = (data) => {
     }
   }
 
+  if (!isEmpty(data.address.trim())) {
+    userDetails.address = data.address;
+  }
+  if (!isEmpty(data.telephone.trim())) {
+    userDetails.telephone = data.telephone;
+  }
+
   return errors, userDetails;
 };
