@@ -79,6 +79,12 @@ exports.reduceUserData = (data) => {
   if (!isEmpty(data.telephone.trim())) {
     userDetails.telephone = data.telephone;
   }
+  if (!isEmpty(data.lat.trim())) {
+    userDetails.lat = data.lat;
+  }
+  if (!isEmpty(data.lng.trim())) {
+    userDetails.lng = data.lng;
+  }
 
   return errors, userDetails;
 };
