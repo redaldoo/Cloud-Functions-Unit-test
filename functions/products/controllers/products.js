@@ -21,6 +21,10 @@ exports.readAll = async (req, res) => {
     if(req.query.priceFrom || req.query.priceTo){
       snapshot = snapshot.orderBy('price');
     }
+    if (req.query.user) {
+      let user = req.query.user;
+      snapshot = snapshot.where("user", "==", user);
+    }
     if (req.query.category) {
       let category = req.query.category;
       snapshot = snapshot.where("category", "==", category);
